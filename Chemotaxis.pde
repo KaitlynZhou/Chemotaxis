@@ -26,20 +26,39 @@ class Walker
       myY = myY + (int)(Math.random()*5)-3;
   }
 }
-Walker [] sam;
+
+Walker [] bob;
+int k = 1;
 void setup(){
   size(500,500);
-  sam = new Walker[20];
-  int i = 0;
-  while(i<sam.length){
-    sam[i] = new Walker();
-    i++;
+  int m = 0;
+  bob = new Walker[k];
+  while(m<bob.length){
+    bob[m] = new Walker();
+    m++;
   }
 }
+
 void draw(){
   background(192);
-  for(int i = 0; i<sam.length; i++){
-    sam[i].walk();
-    sam[i].show();
+  for(int i = 0; i<bob.length; i++){
+    bob[i].walk();
+    bob[i].show();
+  }
+}
+
+void keyPressed()
+{
+  if(keyPressed){
+      if(key == '+' || keyCode == UP){
+        k*=2;
+        setup();
+        draw();
+      }
+      else if (key == '-' || keyCode == DOWN){
+        k/=2;
+        setup();
+        draw();
+      }
   }
 }
