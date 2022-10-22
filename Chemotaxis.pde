@@ -53,12 +53,12 @@ void draw(){
 void keyPressed()
 {
   if(keyPressed){
-      if(key == '+' || keyCode == UP){
+      if(key == 'a'){
         k*=2;
         setup();
         draw();
       }
-      else if (key == '-' || keyCode == DOWN){
+      else if (key == 's'){
         k/=2;
         setup();
         draw();
