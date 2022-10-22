@@ -4,7 +4,7 @@ class Walker
   Walker()
   {
     myX = myY = 250;
-    myColor = color(0,0,(int)(Math.random()*256),80);
+    myColor = color(0,0,(int)(Math.random()*256));
   }
   void walk()
   {
@@ -14,7 +14,7 @@ class Walker
   }
   void show()
   {
-    fill(myColor);
+    fill(myColor,80);
     ellipse(myX,myY,30,30);
     if(mouseX > myX)
       myX = myX + (int)(Math.random()*5)-1;
@@ -30,6 +30,7 @@ class Walker
 Walker [] bob;
 int k = 1;
 void setup(){
+  background(0);
   size(500,500);
   int m = 0;
   bob = new Walker[k];
@@ -40,7 +41,9 @@ void setup(){
 }
 
 void draw(){
-  background(192);
+  noStroke();
+  fill(0,15);
+  rect(0,0,500,500);
   for(int i = 0; i<bob.length; i++){
     bob[i].walk();
     bob[i].show();
